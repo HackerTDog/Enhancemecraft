@@ -43,19 +43,21 @@ public class foodManager {
 		
 		// @Defined Items(@HackerTDog)
 		public static Item foodSandwich;
+		public static Item foodRawOstrich;
+		public static Item foodOstrich;
 		
 		public static void addFood(idManager idm, CreativeTabs tab) {
 	    	if(idm.ifEnabled("@food")) {
 				// Defined Items (@nexized)
-		    	foodRawBacon = (new emcFood(idm.getFoodID(), 1, 0.1F, true, tab).setUnlocalizedName("foodRawBacon"));
-		    	foodBacon = (new emcFood(idm.getFoodID(), 3, 0.3F, true, tab).setUnlocalizedName("foodBacon"));
-		    	foodRawMoutton = (new emcFood(idm.getFoodID(), 1, 0.1F, true, tab).setUnlocalizedName("foodRawMoutton"));
+		    	foodRawBacon = (new emcFood(idm.getFoodID(), 3, 0.3F, true, tab).setUnlocalizedName("foodRawBacon"));
+		    	foodBacon = (new emcFood(idm.getFoodID(), 5, 0.5F, true, tab).setUnlocalizedName("foodBacon"));
+		    	foodRawMoutton = (new emcFood(idm.getFoodID(), 3, 0.3F, true, tab).setUnlocalizedName("foodRawMoutton"));
 		    	foodMoutton = (new emcFood(idm.getFoodID(), 4, 0.4F, true, tab).setUnlocalizedName("foodMoutton"));
 		    	foodCucumber = (new emcFood(idm.getFoodID(), 1, 0.1F, true, tab).setUnlocalizedName("foodCucumber"));
 		    	foodBanana = (new emcFood(idm.getFoodID(), 1, 0.1F, true, tab).setUnlocalizedName("foodBanana"));
 		    	foodTunaSalad = (new emcFood(idm.getFoodID(), 3, 0.3F, true, tab).setUnlocalizedName("foodTunaSalad"));
 		    	foodRawSardine = (new emcFood(idm.getFoodID(), 1, 0.1F, true, tab).setUnlocalizedName("foodRawSardine"));
-		    	foodSardine = (new emcFood(idm.getFoodID(), 1, 0.1F, true, tab).setUnlocalizedName("foodSardine"));
+		    	foodSardine = (new emcFood(idm.getFoodID(), 4, 0.4F, true, tab).setUnlocalizedName("foodSardine"));
 		    	foodCheese = (new emcFood(idm.getFoodID(), 3, 0.3F, true, tab).setUnlocalizedName("foodCheese"));
 		    	foodRye = (new emcFood(idm.getFoodID(), 1, 0.1F, true, tab).setUnlocalizedName("foodRye"));
 		    	foodBarley = (new emcFood(idm.getFoodID(), 1, 0.1F, true, tab).setUnlocalizedName("foodBarley"));
@@ -70,17 +72,22 @@ public class foodManager {
 		    	foodEggplant = (new emcFood(idm.getFoodID(), 3, 0.3F, true, tab).setUnlocalizedName("foodEggplant"));
 		    	foodEggScramled = (new emcFood(idm.getFoodID(), 3, 0.3F, true, tab).setUnlocalizedName("foodEggScramled"));
 		    	
-		    	foodSandwich = (new emcFood(idm.getFoodID(), 6, 0.6F, true, tab).setUnlocalizedName("sandwich"));
-	    	
+		    	// @Defined Items By HackerTDog
+		    	foodSandwich = (new emcFood(idm.getFoodID(), 8, 0.8F, true, tab).setUnlocalizedName("sandwich"));
+		    	foodRawOstrich = (new  emcFood(idm.getFoodID(), 4, 0.4F, true, tab).setUnlocalizedName("foodRawOstrich"));
+		    	foodOstrich = (new  emcFood(idm.getFoodID(), 9, 0.9F, true, tab).setUnlocalizedName("foodOstrich"));
+		    	
 	    	   //Recipes Cant believe you never made them yet
 		    	GameRegistry.addSmelting(foodRawBacon.itemID, new ItemStack(foodBacon), 1.3F);
 		    	GameRegistry.addSmelting(foodRawMoutton.itemID, new ItemStack(foodMoutton), 1.3F);
 		    	GameRegistry.addSmelting(foodRawSardine.itemID, new ItemStack(foodSardine), 1.3F);
+		    	GameRegistry.addSmelting(foodRawOstrich.itemID, new ItemStack(foodOstrich), 1.4F);
 		    	GameRegistry.addRecipe(new ItemStack(foodSandwich), new Object[]{"B", "F", "B", 'B', Item.bread, 'F', Item.fishCooked});
 		    	GameRegistry.addRecipe(new ItemStack(foodSandwich), new Object[]{"B", "F", "B", 'B', Item.bread, 'F', Item.chickenCooked});
 		    	GameRegistry.addRecipe(new ItemStack(foodSandwich), new Object[]{"B", "F", "B", 'B', Item.bread, 'F', Item.beefCooked});
-		    	GameRegistry.addRecipe(new ItemStack(foodSandwich), new Object[]{"B", "F", "B", 'B', Item.bread, 'F', Item.porkCooked});
-
+		    	GameRegistry.addRecipe(new ItemStack(foodSandwich), new Object[]{"B", "F", "B", 'B', Item.bread, 'F', foodBacon});
+		    	GameRegistry.addRecipe(new ItemStack(foodSandwich), new Object[]{"B", "F", "B", 'B', Item.bread, 'F', foodMoutton});
+		    	GameRegistry.addRecipe(new ItemStack(foodTunaSalad), new Object[]{"SFS", 'S', foodLettuce, 'F', Item.fishRaw});
 	    	}
 	    }
 }

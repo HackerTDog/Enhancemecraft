@@ -60,7 +60,7 @@ public class idManager {
 		subConfiguration.save();
 	}
 	
-	private int getNextBlockID() {
+	public int getNextBlockID() {
 		this.currentBlockID = this.currentBlockID + 1;
 		return this.currentBlockID;
 	}
